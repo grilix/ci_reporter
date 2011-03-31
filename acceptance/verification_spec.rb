@@ -80,11 +80,11 @@ describe "Cucumber acceptance" do
       end
     end
 
-    it "should have three tests and two failures" do
+    it "should have four tests and two failures" do
       @doc.root.attributes["errors"].should == "0"
       @doc.root.attributes["failures"].should == "2"
-      @doc.root.attributes["tests"].should == "3"
-      @doc.root.elements.to_a("/testsuite/testcase").size.should == 3
+      @doc.root.attributes["tests"].should == "4"
+      @doc.root.elements.to_a("/testsuite/testcase").size.should == 4
     end
 
     it "should have one failure for the lazy hacker" do

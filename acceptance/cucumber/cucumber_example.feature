@@ -17,3 +17,11 @@ Feature: Example feature
     Given that I can't code for peanuts
     And I write step definitions that throw exceptions
     Then I shouldn't be allowed out in public
+  
+  Scenario: Table parser
+    Given that I am a conscientious developer
+    And I have a hash with these attributes:
+      | foo | FOO |
+      | bar | BAR |
+      | baz | BAZ |
+    Then I should see a green bar

@@ -30,5 +30,8 @@ Given /^I write step definitions that throw exceptions$/ do
   raise RuntimeError, "User error!"
 end
 
+Given /^I have a hash with these attributes:$/ do |table|
+end
+
 Then /^I shouldn't be allowed out in public$/ do
 end
