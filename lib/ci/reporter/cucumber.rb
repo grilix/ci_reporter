@@ -101,8 +101,11 @@ module CI
       end
 
       def before_table_row(table_row)
-        return unless table_row.respond_to?(:name)
-        @test_case = TestCase.new("#@scenario (outline: #{table_row.name})")
+        name = nil
+        name ||= table_row.name if table_row.respond_to?(:name)
+        name ||= table_row.scenario_outline if table_row.respond_to?(:scenario_outline)
+        name ||= table_row.to_s if table_row.respond_to?(:to_s)
+        @test_case = TestCase.new("#@scenario (outline: #{name})")
         @test_case.start
       end
 
