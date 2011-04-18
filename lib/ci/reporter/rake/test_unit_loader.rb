@@ -8,12 +8,9 @@ require 'ci/reporter/test_unit'
 module Test #:nodoc:all
   module Unit
     module UI
-      module Console
-        class TestRunner
-          def create_mediator(suite)
-            # swap in our custom mediator
-            return CI::Reporter::TestUnit.new(suite)
-          end
+      class TestRunner
+        def setup_mediator
+          @mediator = CI::Reporter::TestUnit.new(@suite)
         end
       end
     end

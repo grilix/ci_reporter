@@ -50,6 +50,8 @@ module CI
 
     # Replacement Mediator that adds listeners to capture the results of the <code>Test::Unit</code> runs.
     class TestUnit < Test::Unit::UI::TestRunnerMediator
+      include Test::Unit::Util::Observable
+      
       def initialize(suite, report_mgr = nil)
         super(suite)
         @report_manager = report_mgr || ReportManager.new("test")
